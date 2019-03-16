@@ -4,13 +4,13 @@
 #
 Name     : R-GPArotation
 Version  : 2014.11.1
-Release  : 14
+Release  : 15
 URL      : https://cran.r-project.org/src/contrib/GPArotation_2014.11-1.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/GPArotation_2014.11-1.tar.gz
 Summary  : GPA Factor Rotation
 Group    : Development/Tools
 License  : GPL-2.0 GPL-2.0+
-BuildRequires : clr-R-helpers
+BuildRequires : buildreq-R
 
 %description
 No detailed description available
@@ -23,11 +23,11 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1523306429
+export SOURCE_DATE_EPOCH=1552764257
 
 %install
+export SOURCE_DATE_EPOCH=1552764257
 rm -rf %{buildroot}
-export SOURCE_DATE_EPOCH=1523306429
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
 export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
@@ -62,8 +62,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export _R_CHECK_FORCE_SUGGESTS_=false
-R CMD check --no-manual --no-examples --no-codoc -l %{buildroot}/usr/lib64/R/library GPArotation|| : 
-cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
+R CMD check --no-manual --no-examples --no-codoc  GPArotation || :
 
 
 %files
@@ -98,3 +97,10 @@ cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
 /usr/lib64/R/library/GPArotation/help/paths.rds
 /usr/lib64/R/library/GPArotation/html/00Index.html
 /usr/lib64/R/library/GPArotation/html/R.css
+/usr/lib64/R/library/GPArotation/tests/Harman.R
+/usr/lib64/R/library/GPArotation/tests/Jennrich2002.R
+/usr/lib64/R/library/GPArotation/tests/MASSoblimin.R
+/usr/lib64/R/library/GPArotation/tests/Revelle.R
+/usr/lib64/R/library/GPArotation/tests/Thurstone.R
+/usr/lib64/R/library/GPArotation/tests/WansbeekMeijer.R
+/usr/lib64/R/library/GPArotation/tests/rotations.R
