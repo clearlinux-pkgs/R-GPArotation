@@ -4,7 +4,7 @@
 #
 Name     : R-GPArotation
 Version  : 2014.11.1
-Release  : 33
+Release  : 34
 URL      : https://cran.r-project.org/src/contrib/GPArotation_2014.11-1.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/GPArotation_2014.11-1.tar.gz
 Summary  : GPA Factor Rotation
