@@ -4,7 +4,7 @@
 #
 Name     : R-GPArotation
 Version  : 2022.10.2
-Release  : 45
+Release  : 46
 URL      : https://cran.r-project.org/src/contrib/GPArotation_2022.10-2.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/GPArotation_2022.10-2.tar.gz
 Summary  : GPA Factor Rotation
