@@ -5,7 +5,7 @@
 #
 Name     : R-GPArotation
 Version  : 2023.3.1
-Release  : 48
+Release  : 49
 URL      : https://cran.r-project.org/src/contrib/GPArotation_2023.3-1.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/GPArotation_2023.3-1.tar.gz
 Summary  : Gradient Projection Factor Rotation
