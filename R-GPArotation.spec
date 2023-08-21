@@ -4,10 +4,10 @@
 # Using build pattern: R
 #
 Name     : R-GPArotation
-Version  : 2023.3.1
-Release  : 49
-URL      : https://cran.r-project.org/src/contrib/GPArotation_2023.3-1.tar.gz
-Source0  : https://cran.r-project.org/src/contrib/GPArotation_2023.3-1.tar.gz
+Version  : 2023.8.1
+Release  : 50
+URL      : https://cran.r-project.org/src/contrib/GPArotation_2023.8-1.tar.gz
+Source0  : https://cran.r-project.org/src/contrib/GPArotation_2023.8-1.tar.gz
 Summary  : Gradient Projection Factor Rotation
 Group    : Development/Tools
 License  : GPL-2.0+
@@ -21,17 +21,19 @@ No detailed description available
 
 %prep
 %setup -q -n GPArotation
-cd %{_builddir}/GPArotation
+pushd ..
+cp -a GPArotation buildavx2
+popd
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1679414545
+export SOURCE_DATE_EPOCH=1692654154
 
 %install
-export SOURCE_DATE_EPOCH=1679414545
+export SOURCE_DATE_EPOCH=1692654154
 rm -rf %{buildroot}
 export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
@@ -69,6 +71,7 @@ export no_proxy=localhost,127.0.0.1,0.0.0.0
 export _R_CHECK_FORCE_SUGGESTS_=false
 R CMD check --no-manual --no-examples --no-codoc . || :
 
+/usr/bin/elf-move.py avx2 %{buildroot}-v3 %{buildroot} %{buildroot}/usr/share/clear/filemap/filemap-%{name}
 
 %files
 %defattr(-,root,root,-)
